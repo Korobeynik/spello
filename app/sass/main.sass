@@ -1,0 +1,221 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "animate"
+@import "base"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 15px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	// font-family: 'Stolzl'
+	font-family: 'Stolzl-Light'
+	// font-family: 'Stolzl-Bold'
+	font-weight: normal
+	overflow-x: hidden
+	background-color: #fff
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.st-content-inner
+	margin: 20px
+
+.menu-button
+	width: 76px
+	height: 100%
+	background-color: $blue
+	padding: 13px 12px
+	&:hover
+		cursor: pointer
+	div
+		margin: 0.6em 0 0.6em 0
+		height: 4px
+		width: 3em
+		background-color: white
+		transition-duration: 0.5s
+		&:nth-child(1).active
+			transition-duration: 0.5s
+			transform: translateY(0.9em) rotate(45deg)
+		&:nth-child(2).active
+			transition-duration: 0.3s
+			width: 0
+			opacity: 0
+		&:nth-child(3).active
+			transition-duration: 0.5s
+			transform: translateY(-0.9em) rotate(-45deg)	
+
+
+#st-trigger-effects
+	position: fixed
+	left: 0
+	top: 0
+	width: 320px
+	height: 80px
+	z-index: 1000
+	display: flex
+	align-items: center
+	transition: all 0.3s ease
+	box-shadow: 0 8px 34px 0 rgba(0, 0, 0, 0.34)
+
+
+.download-button
+	display: flex
+	width: 100%
+	height: 80px
+	justify-content: center
+	align-items: center
+	color: #fff
+	font-size: 19px
+	font-weight: 500
+	font-family: 'Stolzl'
+	background-color: #ed1c24
+	&:hover
+		text-decoration: none
+		background-color: darken(#ed1c24, 10%)
+		color: #fff
+	svg
+		margin-right: 15px	
+
+.promo
+	height: 96vh
+	background-color: $blue
+	color: #fff
+	display: flex
+	position: relative
+	.logo
+		position: relative
+		top: -8%
+	.container
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-wrap: wrap
+		position: relative
+
+
+.promo-content
+	display: flex
+	justify-content: space-between
+	width: 100%
+	position: absolute
+	bottom: 10%
+
+.promo-text
+	max-width: 580px
+	font-size: 19px
+
+.social
+	max-width: 300px
+
+.social-list
+	display: flex
+	margin-bottom: 45px
+	&.s-red
+		a
+			outline: 2px solid #ed1c24
+	a
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 40px
+		height: 40px
+		outline: 2px solid #fff
+		margin-right: 40px
+		&:last-child
+			margin-right: 0
+		svg
+			max-width: 23px
+			height: auto
+
+.scroll
+	width: 80px
+	height: 80px
+	background-color: #ed1c24
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	left: 50%
+	bottom: -20px
+	transform: translateX(-50%)
+	box-shadow: 0 8px 34px 0 rgba(0, 0, 0, 0.34)
+	transition: all 0.3s ease
+	&:hover
+		background-color: darken(#ed1c24, 10%)
+
+
+.blue-section
+	background-color: $blue
+	padding-top: 150px
+
+.principles-header
+	display: flex
+	align-items: center
+	font-size: 90px
+	font-family: 'Stolzl-Bold'
+	svg
+		width: 400px
+	.principles-title
+		text-align: center
+		display: flex
+		flex-wrap: wrap
+		span
+			width: 100%
+			display: inline-block
+			line-height: 100px
+	.thin
+		font-family: 'Stolzl-Light'
+		font-size: 50px
+
+.principles-grid
+	display: flex
+	flex-wrap: wrap
+	padding-top: 50px
+	.principles-item
+		width: 25%
+		min-width: 25%
+		min-height: 410px
+		background-color: #39357a
+		&.item-text
+			background-color: transparent
+			display: flex
+			align-items: center
+			justify-content: center
+			padding: 0 20px
+
+.marketing
+	padding-top: 60px
+	.marketing-title
+		font-size: 130px
+		font-family: 'Stolzl-Bold'
+		line-height: 140px
+
+
+@import "media" // Always at the end
