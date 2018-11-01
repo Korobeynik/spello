@@ -1,5 +1,77 @@
 $(function() {
 
+	// var owl = $('.programSlider');
+ //    owl.owlCarousel({
+ //        items:3,
+ //        loop:true,
+ //        margin: 30,
+ //        smartSpeed: 500,
+ //        autoplay:false,
+ //        autoplayTimeout:5000,
+ //        nav: true,
+ //        autoplayHoverPause:true,
+ //        responsiveClass:true,
+ //        responsive:{
+ //            0:{
+ //                items:1,
+ //                nav:true,
+ //                autoplay:false
+ //            },
+ //            600:{
+ //                items:2,
+ //                nav:false,
+ //                autoplay:false
+ //            },
+ //            1000:{
+ //                items:2,
+ //                nav:true,
+ //                loop:true
+ //            },
+ //            1200:{
+ //                items:3,
+ //                nav:true,
+ //                loop:true
+ //            }
+ //        }
+ //    });
+
+	$('.scroll-to').bind('click', function(event) {
+      var $anchor = $(this);
+      $('.st-content').stop().animate({
+          scrollTop: ($($anchor.attr('href')).offset().top - 0)
+      }, 1250, 'easeInOutCubic');
+      event.preventDefault();
+  });
+
+// $('.scroll-to, .icon').on('click', function (el) {
+//   el.preventDefault();
+
+//   $('html, body').animate({
+//     scrollTop: $($(this).attr('href')).offset().top
+//   }, 500, 'linear');
+// });
+//   $('html, body').animate({
+//     scrollTop: ($('#element').offset().top)
+// },500);
+
+  $('.st-menu .icon').click(function(e) {
+  	e.preventDefault();
+  	let $anchor = $(this);
+  	$('.menu-button').trigger('click');
+
+		setTimeout(function() {
+			$('.st-content').stop().animate({
+          scrollTop: ($($anchor.attr('href')).offset().top)
+      }, 1500, 'easeInOutCubic');
+		},1000);
+
+      // var $anchor = $(this);
+      // $('.st-content-inner').stop().animate({
+      //     scrollTop: ($($anchor.attr('href')).offset().top - 0)
+      // }, 1250, 'easeInOutCubic');
+      // event.preventDefault();
+  });
+
 	$('.menu-button').click(function() {
 		$(this).toggleClass('open');
 		$(this).children('div').toggleClass('active');
@@ -16,15 +88,18 @@ $(function() {
 		} else {
 			$(this).addClass('open');
 		}
+	});
 
+	$('#play').click(function() {
+		$(this).css('display', 'none');
+		$('video').attr('controls',true);
+		$('video').trigger('play');
 	});
 
 
 });
 
-$('.menu-button.open').click(function() {
-	alert("aSome");
-});
+
 
 /*!
  * classie - class helper functions

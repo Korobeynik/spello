@@ -174,6 +174,7 @@ b, strong
 .blue-section
 	background-color: $blue
 	padding-top: 150px
+	padding-bottom: 0px
 
 .principles-header
 	display: flex
@@ -217,5 +218,72 @@ b, strong
 		font-family: 'Stolzl-Bold'
 		line-height: 140px
 
+.marketing-content
+	display: flex
+	justify-content: space-between
+
+.marketing-video
+	max-width: 785px
+	position: relative
+	bottom: -90px
+	z-index: 10
+	#play
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		z-index: 10
+		display: flex
+		align-items: center
+		justify-content: center
+		&:hover
+			cursor: pointer
+		svg
+			width: 100px
+	video
+		width: 100%
+		height: auto
+		max-height: 100%
+
+.marketing-list
+	counter-reset: count
+	padding: 0
+	margin: 0
+	list-style-type: none
+	max-width: 305px
+	position: relative
+	top: -50px
+	li
+		position: relative
+		counter-increment: count
+		margin-bottom: 30px
+		&:before
+			content: counter(count)
+			position: absolute
+			width: 36px
+			height: 36px
+			border: 2px solid #fff
+			border-radius: 50%
+			left: -55px
+			font-size: 15px
+			font-family: 'Stolzl-Bold'
+			text-align: center
+			line-height: 33px
+
+.thank
+	padding: 0
+	align-items: center
+	position: relative
+	.thank-image
+		max-width: 100%
+		width: 100%
+
+.thank-title
+	font-family: 'Stolzl-Bold'
+	font-size: 200px
+	position: absolute
+	right: 6%
+	bottom: 2%
 
 @import "media" // Always at the end
