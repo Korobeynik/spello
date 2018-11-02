@@ -1,5 +1,58 @@
-html, body, .st-container, .st-pusher
+html, body, .st-container
+	//height: 100%
+	// &.active
+	// 	height: 100%
+
+
+// .st-container.st-menu-open
+// 		height: 100%
+// 		overflow: hidden
+// 		position: fixed !important
+// 		right: 0
+// 		top: 0
+// 		left: 0
+// 		bottom: 0
+
+// html, body
+// 	height: 100%
+// 	width: 100%
+
+.block-revealer__element
+	position: absolute
+	top: 0
+	left: 0
+	width: 95%
 	height: 100%
+	background: #000
+	pointer-events: none
+	opacity: 0
+
+// .block-revealer__content
+// 	opacity: 1 !important
+
+.animate-image
+	width: 95%
+
+div#rev-1
+	position: absolute
+	left: 0
+	z-index: 1
+
+div#rev-3
+	position: absolute !important
+	right: 0
+	z-index: 1
+
+div#rev-5
+	position: absolute !important
+	left: 0
+	top: 15px
+	z-index: 1
+
+div#rev-7
+	position: absolute !important
+	right: 0
+	z-index: 1	
 
 .st-content
 	height: 100%
@@ -19,20 +72,23 @@ html, body, .st-container, .st-pusher
 	position: relative
 	left: 0
 	z-index: 99
-	height: 100%
+	// height: 100vh
 	-webkit-transition: -webkit-transform 0.5s
 	transition: transform 0.5s
-	// &::after
-	// 	position: absolute
-	// 	top: 0
-	// 	right: 0
-	// 	width: 0
-	// 	height: 0
-	// 	background: rgba(0, 0, 0, 0.2)
-	// 	content: ''
-	// 	opacity: 0
-	// 	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s
-	// 	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s
+	// overflow-y: scroll
+	//overflow-y: scroll
+	&::after
+		position: absolute
+		top: 0
+		right: 0
+		width: 0
+		height: 0
+		background: rgba(0, 0, 0, 0.7)
+		content: ''
+		opacity: 0
+		-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s
+		transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s
+		z-index: 2
 
 .st-menu-open .st-pusher::after
 	width: 100%
@@ -42,27 +98,30 @@ html, body, .st-container, .st-pusher
 	transition: opacity 0.5s
 
 .st-menu
-	position: absolute
+	position: fixed
 	top: 0
 	left: 0
 	z-index: 100
-	visibility: hidden
+	//visibility: hidden
 	width: 300px
 	height: 100%
 	background: #fff
 	-webkit-transition: all 0.5s
 	transition: all 0.5s
-	&::after
-		position: absolute
-		top: 0
-		right: 0
-		width: 100%
-		height: 100%
-		background: rgba(0, 0, 0, 0.2)
-		content: ''
-		opacity: 1
-		-webkit-transition: opacity 0.5s
-		transition: opacity 0.5s
+	transform: translateX(-120%)
+	&.active
+		transform: translateX(0%)
+	// &::after
+	// 	position: absolute
+	// 	top: 0
+	// 	right: 0
+	// 	width: 100%
+	// 	height: 100%
+	// 	background: rgba(0, 0, 0, 0.2)
+	// 	content: ''
+	// 	opacity: 1
+	// 	-webkit-transition: opacity 0.5s
+	// 	transition: opacity 0.5s
 
 .st-menu-open .st-menu::after
 	width: 0
@@ -120,7 +179,8 @@ html, body, .st-container, .st-pusher
 		-webkit-transform-style: preserve-3d
 		transform-style: preserve-3d
 	&.st-menu-open .st-pusher
-		transform: translateZ(300px) translateX(5%) rotateY(-25deg)
+		// transform: translateZ(300px) translateX(5%) rotateY(-25deg)
+		transform: translateX(280px)
 	&.st-menu
 		opacity: 1
 		-webkit-transform: translate3d(-100%, 0, 0)
