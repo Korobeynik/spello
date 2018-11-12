@@ -1,5 +1,5 @@
 onResize = function() {
-    if($(window).width() < 1000) {
+    if($(window).width() < 530) {
         var owl = $('.principles-slider');
 			    owl.owlCarousel({
 			        items:1,
@@ -16,8 +16,6 @@ $(window).resize(onResize);
 
 
 $(function() {
-
-	// $(".content-tittle").animated("flipInY", "fadeOutDown");
 
 	//$(".scroll-to, .icon").mPageScroll2id();
 
@@ -64,33 +62,15 @@ $(function() {
       // event.preventDefault();
   });
 
-// let elem = $('#rev-1').offset().top.toFixed();
+$(window).scroll(function () {
 
-// let a = parseInt(elem);
-
-// $('.st-pusher').scroll(function(){
-// console.log(a)
-
-// 	let b = ($(this).scrollTop());
-
-// 	console.log(b)
-
-// 	if( $(this).scrollTop() === a ) {
-// 		alert("aSome")
-// 	}
-// })
-
-
-// $(window).scroll(function () {
-
-// 	console.log($('.st-pusher').scrollTop());
-
-//   // if ($(this).scrollTop() > 100) {
-//   //   // бла-бла-бла
-//   // } else {
-//   //   // бла-бла-бла
-//   // }
-// });
+	//console.log($(this).scrollTop());
+  // if ($(this).scrollTop() > 100) {
+  //   // бла-бла-бла
+  // } else {
+  //   // бла-бла-бла
+  // }
+});
 
 	$('.menu-button').click(function() {
 		//console.log($(this).scrollTop(1000));

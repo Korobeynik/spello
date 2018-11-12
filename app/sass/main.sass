@@ -51,7 +51,7 @@ b, strong
 	width: 76px
 	height: 100%
 	background-color: $blue
-	padding: 13px 12px
+	padding: 15px 8px 12px 8px
 	&:hover
 		cursor: pointer
 	div
@@ -148,6 +148,13 @@ b, strong
 		height: 40px
 		outline: 2px solid #fff
 		margin-right: 40px
+		transition: background-color 0.2s ease
+		&:hover
+			background-color: #fff
+			svg
+				background-color: #fff
+				path
+					fill: #262262
 		&:last-child
 			margin-right: 0
 		svg
